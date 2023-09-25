@@ -83,17 +83,24 @@
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editTextTextLogin"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_user"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Enter Your Email"
-            android:inputType="text"
-            android:padding="16dp"
-            android:textColor="#5c5f72" />
+            android:textColorHint="#5E5858"
+            app:boxStrokeColor="#5E5858"
+            app:hintTextColor="#7C230909">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:textColor="#5c5f72" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/textView3Login"
@@ -104,18 +111,26 @@
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editTextTextPasswordLogin"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_pass"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Enter Your Password"
-            android:drawableEnd="@drawable/eye_close"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textColor="#5c5f72" />
+            android:textColorHint="#5E5858"
+            app:boxStrokeColor="#5E5858"
+            app:hintTextColor="#7C230909"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:textColor="#5c5f72" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
             android:id="@+id/checkBox2Login"
@@ -201,11 +216,11 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5px"
-        android:background="@drawable/login_btn_background_create"
         android:text="Create new account"
         android:textColor="#FCFCFF"
         android:textSize="15sp"
         android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout4Login" />
