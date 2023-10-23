@@ -55,7 +55,7 @@
         android:id="@+id/linearAVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/linesrID">
@@ -175,156 +175,91 @@
     </LinearLayout>
 
 
-    <!--    <androidx.appcompat.widget.SearchView-->
-    <!--        android:id="@+id/search"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:layout_width="350dp"-->
-    <!--        android:layout_height="30dp"-->
-    <!--        app:queryHint="Tìm kiếm món ăn"-->
-    <!--        android:background="#DFDADA"-->
-    <!--        app:layout_constraintCircleRadius="50dp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/linearbutton">-->
-    <!--    </androidx.appcompat.widget.SearchView>-->
-
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/search"-->
-    <!--        android:layout_width="350dp"-->
-    <!--        android:layout_height="40dp"-->
-    <!--        android:layout_marginTop="76dp"-->
-    <!--        android:background="#4E4C4C"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/linearbutton">-->
-
-    <!--        <ImageView-->
-    <!--            android:layout_width="40dp"-->
-    <!--            android:layout_height="40dp"-->
-    <!--            android:background="" />-->
-    <!--    </LinearLayout>-->
-
-    <LinearLayout
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/Txt_Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/monan_btn"
-                android:layout_width="180dp"
+    <Button
+                android:id="@+id/button"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:paddingHorizontal="20dp"
-                app:backgroundTint="@null"
-                android:background="@drawable/edit_background_bt_monan"
-                android:layout_gravity="center"
-                android:text="Món ăn"
-                android:paddingStart="45dp"/>
-            <ImageView
-                android:id="@id/monan_btn"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/ic_monan" />
-
-
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/yeuthich_btn"
-                android:layout_width="180dp"
-                android:layout_height="40dp"
-                android:paddingHorizontal="20dp"
-                app:backgroundTint="@null"
-                android:background="@drawable/edit_background_bt_yeuthich"
-                android:layout_gravity="center"
-                android:text="Yêu thích"
-                android:textColor="#000000"
-                android:paddingStart="45dp"/>
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/love_t" />
-        </FrameLayout>
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Timkiem"
-        android:layout_width="380dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="1dp"
-                android:background="@drawable/ic_timkiem"/>
-
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/edit_background_timkiem"
-                android:ems="10"
-                android:hint="Tìm kiếm"
-                android:fontFamily="@font/quicksand_medium"
+                android:background="@drawable/edit_background_bt_suatrang"
+                android:text="Chỉnh ửa trang cá nhân"
                 android:textSize="40px"
-                android:inputType="text"
-                android:textColor="#5c5f72"/>
-        </LinearLayout>
+                android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_bold"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@id/Txt_Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+    />
 
-    </androidx.cardview.widget.CardView>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/Timkiem"-->
+<!--        android:layout_width="380dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:cardCornerRadius="15dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/button"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <ImageView-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginStart="3dp"-->
+<!--                android:layout_marginTop="1dp"-->
+<!--                android:background="@drawable/ic_timkiem"/>-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:background="@drawable/edit_background_timkiem"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Tìm kiếm"-->
+<!--                android:fontFamily="@font/quicksand_medium"-->
+<!--                android:textSize="40px"-->
+<!--                android:inputType="text"-->
+<!--                android:textColor="#5c5f72"/>-->
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_monan"
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_monan"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="400dp"-->
+<!--        android:layout_marginTop="15dp"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/button"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+
+
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tablayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/button"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpaper"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="15dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Timkiem"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/frameLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="400dp"-->
-    <!--        android:layout_marginTop="24dp"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintHorizontal_bias="1.0"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toBottomOf="@id/Timkiem" >-->
-
-    <!--    </FrameLayout>-->
+        app:layout_constraintTop_toBottomOf="@id/tablayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

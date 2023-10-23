@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">APP_NAUAN</string>
+    <string name="baidang_fragment">Bài đăng Fragment</string>
+    <string name="yeuthich_fragment">Yêu thích Fragment</string>
 </resources>

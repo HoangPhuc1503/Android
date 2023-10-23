@@ -1,8 +1,10 @@
 package com.example.app_nauan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -15,16 +17,23 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.app_nauan.adapter.MonAnAdapter;
+import com.example.app_nauan.adapter.AdapterMonAn;
+import com.example.app_nauan.adapter.ViewPagerAdapter;
 import com.example.app_nauan.model.MonAn;
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    Button monan_btn,yeuthich_btn,bottomsheet;
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+    private ViewPagerAdapter mViewPagerAdapter;
+    Button bottomsheet;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,46 +48,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView = findViewById(R.id.recycler_monan);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        mTabLayout = findViewById(R.id.tablayout);
+        mViewPager = findViewById(R.id.viewpaper);
+        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(mViewPagerAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
 
-        monan_btn = findViewById(R.id.monan_btn);
-        yeuthich_btn = findViewById(R.id.yeuthich_btn);
-        monan_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<MonAn> arrayList = new ArrayList<>();
-                arrayList.add(new MonAn("Thịt kho tàu","15 phút", "280 kcal", R.drawable.thanh_pham));
-                arrayList.add(new MonAn("Bún bò huế","25 phút", "370 kcal", R.drawable.thanh_pham_bunbo));
-                arrayList.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
-                arrayList.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
-                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
-                arrayList.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
-                arrayList.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
-                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
-                MonAnAdapter adapter = new MonAnAdapter(arrayList);
-                recyclerView.setAdapter(adapter);
-            }
-        });
-        yeuthich_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<MonAn> arrayList = new ArrayList<>();
-                arrayList.add(new MonAn("Thịt ","15 phút", "280 kcal", R.drawable.thanh_pham));
-                arrayList.add(new MonAn("Bún bò ","25 phút", "370 kcal", R.drawable.thanh_pham_bunbo));
-                arrayList.add(new MonAn("Canh ","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
-                arrayList.add(new MonAn("Sườn rim ","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
-                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
-                arrayList.add(new MonAn("Canh mướp ","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
-                arrayList.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
-                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
-                MonAnAdapter adapter = new MonAnAdapter(arrayList);
-                recyclerView.setAdapter(adapter);
-            }
-        });
+
+
+
+//        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        recyclerView = findViewById(R.id.recycler_monan);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//
+//                List<MonAn> arrayList = new ArrayList<>();
+//                arrayList.add(new MonAn("Thịt kho tàu","15 phút", "280 kcal", R.drawable.thanh_pham));
+//                arrayList.add(new MonAn("Bún bò huế","25 phút", "370 kcal", R.drawable.thanh_pham_bunbo));
+//                arrayList.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
+//                arrayList.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
+//                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
+//                arrayList.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
+//                arrayList.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
+//                arrayList.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
+//                MonAnAdapter adapter = new MonAnAdapter(arrayList);
+//                recyclerView.setAdapter(adapter);
+
 
     }
 
