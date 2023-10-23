@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".adapter.MonAnAdapter"
+            android:name=".adapter.AdapterMonAn"
             android:exported="true" />
         <activity
             android:name=".model.MonAn"

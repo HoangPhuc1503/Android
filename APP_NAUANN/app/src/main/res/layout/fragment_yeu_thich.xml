@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
+    android:background="#FFFFFF"
     tools:context=".fragment.BaiDang_Fragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_monan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_margin="15dp"
-        android:text="@string/yeuthich_fragment" />
+        android:paddingTop="10dp"/>
 
 </FrameLayout>

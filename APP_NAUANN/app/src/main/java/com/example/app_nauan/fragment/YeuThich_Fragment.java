@@ -6,12 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_nauan.R;
+import com.example.app_nauan.adapter.AdapterMonAn;
+import com.example.app_nauan.model.MonAn;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class YeuThich_Fragment extends Fragment {
 
-
+    private RecyclerView rcvMonAn;
+    private View mytView;
     public YeuThich_Fragment() {
         // Required empty public constructor
     }
@@ -19,7 +27,28 @@ public class YeuThich_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yeu_thich, container, false);
+        mytView =  inflater.inflate(R.layout.fragment_yeu_thich, container, false);
+        rcvMonAn = mytView.findViewById(R.id.recycler_monan);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        rcvMonAn.setLayoutManager(linearLayoutManager);
+
+        AdapterMonAn adapterMonAn = new AdapterMonAn();
+        adapterMonAn.setData(getListMonAn());
+
+        rcvMonAn.setAdapter(adapterMonAn);
+
+        return mytView;
+    }
+    private List<MonAn> getListMonAn(){
+        List<MonAn> list = new ArrayList<>();
+        list.add(new MonAn("Thịt ","15 phút", "280 kcal", R.drawable.thanh_pham));
+        list.add(new MonAn("Bún bò huế","25 phút", "370 kcal", R.drawable.thanh_pham_bunbo));
+        list.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
+        list.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
+        list.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
+        list.add(new MonAn("Canh mướp đắng","45 phút", "330 kcal", R.drawable.thanh_pham_canhmuopdang));
+        list.add(new MonAn("Sườn rim ngọt","30 phút", "330 kcal", R.drawable.thanh_pham_suonrim));
+        list.add(new MonAn("Thị kho","45 phút", "330 kcal", R.drawable.thanh_pham));
+        return list;
     }
 }
