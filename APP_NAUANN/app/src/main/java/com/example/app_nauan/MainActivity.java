@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private ViewPagerAdapter mViewPagerAdapter;
-    Button bottomsheet;
+    Button bottomsheet,btn_cscanhan;
 
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +56,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_cscanhan = findViewById(R.id.btn_cscanhan);
+        btn_cscanhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintenSettingUser = new Intent(MainActivity.this,SettingUserActivity.class);
+                startActivity(myintenSettingUser);
+            }
+        });
 
+        setTabLayAnimation();
 
-//          initToolbal();
 
         mTabLayout = findViewById(R.id.tablayout);
         mViewPager = findViewById(R.id.viewpaper);
@@ -75,20 +85,14 @@ public class MainActivity extends AppCompatActivity {
 //    }
 //}
 
-private void setTabLayAnimation(){
+    private void setTabLayAnimation() {
         final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.CollapsingToolbarLayout);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.avata);
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-            @Override
-            public void onGenerated(@Nullable Palette palette) {
-                int myColor = palette.getVibrantColor(getResources().getColor(R.color.colorPrimary));
-                int myDarkColor = palette.getVibrantColor(getResources().getColor(R.color.black_trans));
-                collapsingToolbarLayout.setContentScrimColor(myColor);
-                collapsingToolbarLayout.setContentScrimColor(myDarkColor);
-                
-            }
-        });
-}
+        int myColor = getResources().getColor(R.color.colorPrimary); // Sử dụng màu cố định
+        collapsingToolbarLayout.setContentScrimColor(myColor);
+    }
+
+
+
     private void showDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

@@ -121,7 +121,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/lock_caidat"/>
+                        android:background="@drawable/baomat24"/>
                     <TextView
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"

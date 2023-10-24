@@ -1,5 +1,9 @@
 package com.example.app_nauan.adapter;
 
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.widget.Switch;
 
 import androidx.annotation.NonNull;
@@ -37,9 +41,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-
-        String title="";
-        switch(position){
+        String title = "";
+        switch (position) {
             case 0:
                 title = "Bài đăng";
                 break;
@@ -47,6 +50,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 title = "Yêu thích";
                 break;
         }
-        return title;
+
+        // Tạo một SpannableString để đặt in đậm cho tiêu đề
+        SpannableString spannableTitle = new SpannableString(title);
+        spannableTitle.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableTitle.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return spannableTitle;
     }
 }
