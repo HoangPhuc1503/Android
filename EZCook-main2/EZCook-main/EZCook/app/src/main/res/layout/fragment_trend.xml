@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".fragment.TrendFragment">
+
+    <LinearLayout
+        android:paddingBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">\
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+                android:src="@drawable/t_icon_trend"/>
+        <TextView
+            android:id="@+id/title_listdata_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Thịnh Hành"
+            android:textAlignment="center"
+            android:textColor="#01442D"
+            android:textSize="40sp" />
+        </LinearLayout>
+            <TextView
+                android:id="@+id/title_listdata_new"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Món mới"
+                android:textColor="#01442D"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_listdata_new"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/title_listdata_fastfood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Món ăn nhanh"
+                android:textColor="#01442D"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_listdata_fastfood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/title_listdata_cake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Bánh ngọt"
+                android:textColor="#01442D"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_listdata_cake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
